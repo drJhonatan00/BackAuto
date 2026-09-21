@@ -268,3 +268,4 @@ Do not attach private files or sensitive paths unless they have been anonymised.
 ## Acknowledgements
 
 BackAuto is built on the .NET platform and Windows Forms. The project uses standard .NET libraries for file access, JSON configuration, asynchronous operations, and the Windows notification area.
+<!-- Watashi wa Watashi sore dake -->
