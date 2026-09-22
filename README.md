@@ -83,7 +83,7 @@ The project targets `net8.0-windows10.0.19041.0` and uses Windows Forms.
 1. Clone the repository:
 
    ```powershell
-   git clone https://github.com/YOUR_USERNAME/BackAuto.git
+   git clone https://github.com/drJhonatan00/BackAuto.git
    cd BackAuto
    ```
 
@@ -177,8 +177,6 @@ This file contains the selected source paths, the destination folder, the interv
 
 ```text
 BackAuto/
-├── BackAuto.sln
-├── README.md
 └── BackAuto/
     ├── BackAuto.csproj
     ├── MainForm.cs
@@ -268,4 +266,4 @@ Do not attach private files or sensitive paths unless they have been anonymised.
 ## Acknowledgements
 
 BackAuto is built on the .NET platform and Windows Forms. The project uses standard .NET libraries for file access, JSON configuration, asynchronous operations, and the Windows notification area.
-<!-- Watashi wa Watashi sore dake -->
+<!-- Watashi wa watashi sore dake -->
