@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "mRjcf5W0NI0=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Aluno\\Documents\\Treino\\Here\\Windows\\BackAuto - FinalVersion\\BackAuto\\BackAuto.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Aluno\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.19041.57\\microsoft.windows.sdk.net.ref.10.0.19041.57.nupkg.sha512"
+  ],
+  "logs": []
+}
