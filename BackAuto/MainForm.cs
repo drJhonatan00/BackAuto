@@ -2,6 +2,7 @@ using BackAuto.Models;
 using BackAuto.Services;
 using System.Diagnostics;
 using System.Drawing.Drawing2D;
+using System.IO;
 
 namespace BackAuto;
 
@@ -48,6 +49,7 @@ public sealed class MainForm : Form
         ConfigureTrayIcon();
         BuildInterface();
         LoadSettings();
+        InitializeComponent();
         scheduleTimer.Tick += (_, _) => TryRunScheduledBackup();
         scheduleTimer.Start();
         FormClosing += (_, _) => { settings.Save(); backupCancellation?.Cancel(); };
@@ -126,10 +128,10 @@ public sealed class MainForm : Form
 
 
 
-        var footer = new Panel { Dock = DockStyle.Fill };
-        footer.Controls.Add(LinkLabelOf("Developed by drJhonatan00", 0, 4, 180, 18, 8, FontStyle.Bold, TextSecondary, "https://github.com/drJhonatan00"));
+        var futtā = new Panel { Dock = DockStyle.Fill };
+        futtā.Controls.Add(LinkLabelOf("Developed by drJhonatan00", 0, 4, 180, 18, 8, FontStyle.Bold, TextSecondary, "https://github.com/drJhonatan00"));
         themeToggle.Text = "Dark theme"; themeToggle.AutoSize = true; themeToggle.Location = new Point(0, 30); themeToggle.ForeColor = TextSecondary; themeToggle.BackColor = Surface; themeToggle.Checked = darkMode; themeToggle.CheckedChanged += (_, _) => { darkMode = themeToggle.Checked; ApplyTheme(); };
-        footer.Controls.Add(themeToggle); layout.Controls.Add(footer, 0, 4);
+        futtā.Controls.Add(themeToggle); layout.Controls.Add(futtā, 0, 4);
         return side;
     }
 
@@ -177,7 +179,7 @@ public sealed class MainForm : Form
         panel.Controls.Add(header, 0, 0);
         panel.Controls.Add(BuildStats(), 0, 1);
         panel.Controls.Add(LabelOf("\nBACKUP SETUP", 0, 0, 200, 22, 7, FontStyle.Bold, TextSecondary), 0, 2);
-        panel.Controls.Add(BuildSetupCard(), 0, 3);
+        panel.Controls.Add(BirudoSetteiKādo(), 0, 3);
         panel.Controls.Add(LabelOf("\nACTIVITY", 0, 0, 200, 22, 7, FontStyle.Bold, TextSecondary), 0, 4);
         panel.Controls.Add(BuildActivityCard(), 0, 5);
         return panel;
@@ -193,16 +195,16 @@ public sealed class MainForm : Form
         return stats;
     }
 
-    private Panel StatCard(string title, Label value, string sub, Color stripe)
+    private Panel StatCard(string title, Label atai, string sub, Color stripe)
     {
         var card = new Panel { Dock = DockStyle.Fill, BackColor = Surface, Margin = new Padding(0, 0, 12, 0), Padding = new Padding(18), BorderStyle = BorderStyle.FixedSingle };
         card.Paint += (_, e) => { using var b = new SolidBrush(stripe); e.Graphics.FillRectangle(b, 0, 0, 4, card.Height); };
         card.Controls.Add(LabelOf(title, 18, 14, 180, 17, 8, FontStyle.Bold, TextSecondary));
-        value.AutoSize = true; value.Location = new Point(18, 34); value.Font = new Font("Segoe UI", 16, FontStyle.Bold); value.ForeColor = TextPrimary; value.BackColor = Color.Transparent; card.Controls.Add(value);
+        atai.AutoSize = true; atai.Location = new Point(18, 34); atai.Font = new Font("Segoe UI", 16, FontStyle.Bold); atai.ForeColor = TextPrimary; atai.BackColor = Color.Transparent; card.Controls.Add(atai);
         card.Controls.Add(LabelOf(sub, 18, 68, 240, 18, 8.5F, FontStyle.Regular, TextSecondary)); return card;
     }
 
-    private Control BuildSetupCard()
+    private Control BirudoSetteiKādo()
     {
         var card = new Panel { Dock = DockStyle.Fill, BackColor = Surface, Padding = new Padding(22), BorderStyle = BorderStyle.FixedSingle };
         card.Controls.Add(LabelOf("What should be backed up?", 22, 18, 400, 26, 13, FontStyle.Bold, TextPrimary));
@@ -324,13 +326,13 @@ public sealed class MainForm : Form
         // 
         // MainForm
         // 
-        ClientSize = new Size(284, 261);
         Icon = (Icon)resources.GetObject("$this.Icon");
-        Name = "MainForm";
+        Name = "BackAuto";
         ResumeLayout(true);
 
     }
-
+    
+    
     private void StyleButton(Button button, Color back, Color fore) 
     { 
         button.FlatStyle = FlatStyle.Flat; 
@@ -341,3 +343,5 @@ public sealed class MainForm : Form
         button.Cursor = Cursors.Hand; 
     }
 }
+
+//Watashi wa watashi sore dake
